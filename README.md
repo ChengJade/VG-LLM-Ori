@@ -256,7 +256,7 @@ bash scripts/train/train_sr.sh
 
 #### Training Details
   * **Backbones**: Our models are built upon two sizes of Qwen2.5-VL—3B and 7B, and integrated with VGGT-1B as the 3D geometry encoder.
-  * **Hardware:** Our experiments were conducted on a setup with 8x NVIDIA H800 (80G) GPUs.
+  * **Hardware:** Our experiments were conducted on a setup with **8x NVIDIA H800 (80G)** GPUs.
   * **Hyperparameters:** We trained the model for one epoch using the Adam optimizer with a batch size of 64, a warmup ratio of 0.03, and a learning rate of 1e-5.
   * **Frozen Components:** During training, the visual encoder of the MLLM, the 3D geometry encoder, and the multimodal connector are kept frozen.
   * **Training Duration:**

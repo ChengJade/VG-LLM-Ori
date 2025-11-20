@@ -6,34 +6,17 @@ from .vggt_encoder import VGGTEncoder
 from .pi3_encoder import Pi3Encoder
 
 
-def create_geometry_encoder(
-    encoder_type: str,
-    model_path: Optional[str] = None,
-    reference_frame: str = "first",
-    freeze_encoder: bool = True,
-    **encoder_kwargs
-) -> BaseGeometryEncoder:
+def create_geometry_encoder(config) -> BaseGeometryEncoder:
     """
     Factory function to create geometry encoders.
     
     Args:
-        encoder_type: Type of encoder ("vggt", "pi3", etc.)
-        model_path: Path to pretrained model
-        reference_frame: Reference frame setting
-        freeze_encoder: Whether to freeze encoder parameters
-        **encoder_kwargs: Additional encoder-specific arguments
-        
+        config: GeometryEncoderConfig instance with encoder configuration.
     Returns:
         Geometry encoder instance
     """
-    config = GeometryEncoderConfig(
-        encoder_type=encoder_type,
-        model_path=model_path,
-        reference_frame=reference_frame,
-        freeze_encoder=freeze_encoder,
-        encoder_kwargs=encoder_kwargs
-    )
-    
+
+    encoder_type = config.encoder_type.lower()
     if encoder_type == "vggt":
         return VGGTEncoder(config)
     elif encoder_type == "pi3":

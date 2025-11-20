@@ -1604,14 +1604,7 @@ class Qwen2_5_VLForConditionalGenerationWithVGGT(Qwen2_5_VLPreTrainedModel, Gene
             reference_frame=getattr(config, "reference_frame", "first"),
             freeze_encoder=getattr(config, "geometry_encoder_freeze", True)
         )
-        
-        # Create geometry encoder
-        self.geometry_encoder = create_geometry_encoder(
-            encoder_type=encoder_config.encoder_type,
-            model_path=encoder_config.model_path,
-            reference_frame=encoder_config.reference_frame,
-            freeze_encoder=encoder_config.freeze_encoder,
-        )
+        self.geometry_encoder = create_geometry_encoder(encoder_config)
         
         # Create feature merger
         self.geometry_merger = GeometryFeatureMerger(
