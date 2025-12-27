@@ -11,11 +11,11 @@ NPROC_PER_NODE=$(nvidia-smi --list-gpus | wc -l)  # Automatically detects availa
 # ======================
 # Path Configuration
 # ======================
-MODEL_PATH="Qwen/Qwen2.5-VL-7B-Instruct/"  # [ModelArguments] Pretrained model path
+MODEL_PATH="/mnt/ceph/3d_llm/model/Qwen2.5-VL-3B-Instruct/"  # [ModelArguments] Pretrained model path
 GEOMETRY_ENCODER_TYPE="vggt"
-GEOMETRY_ENCODER_PATH="facebook/VGGT-1B"
-OUTPUT_DIR="PATH_TO_OUTPUT_DIR"                   # Directory for saving checkpoints
-CACHE_DIR="./cache"                        # [TrainingArguments] Cache directory for models
+GEOMETRY_ENCODER_PATH="/mnt/ceph/3d_llm/model/VGGT-1B"
+OUTPUT_DIR="/mnt/ceph/3d_llm/result/$(date +%Y%m%d-%H%M%S)"                   # Directory for saving checkpoints
+CACHE_DIR="/mnt/ceph/3d_llm/model/hf_cached"                        # [TrainingArguments] Cache directory for models
 mkdir -p $OUTPUT_DIR
 
 # ======================
@@ -27,7 +27,7 @@ DATASETS="scan2cap,scanrefer,scannet_det"                  # [DataArguments] Dat
 # Training Hyperparameters
 # ======================
 export NCCL_NVLS_ENABLE=0
-LR=1e-5
+LR=2e-5
 total_batch_size=64
 GRADIENT_ACCUMULATION_STEPS=$(($total_batch_size / $NPROC_PER_NODE))
 
