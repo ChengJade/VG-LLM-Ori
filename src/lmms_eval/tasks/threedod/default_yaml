@@ -1,4 +1,4 @@
-dataset_path: data/evaluation/threedod/
+dataset_path: /mnt/ceph/3d_llm/data/evaluation/threedod/ # data/evaluation/threedod/
 dataset_kwargs:
   token: True
 output_type: generate_until
@@ -22,5 +22,5 @@ lmms_eval_specific_kwargs:
   default:
     pre_prompt: ""
 metadata:
-  media_dir: data/media/
+  media_dir: /mnt/ceph/3d_llm/data/media/
   version: 0.0
