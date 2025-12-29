@@ -4,7 +4,7 @@ export LMMS_EVAL_LAUNCHER="accelerate"
 export NCCL_NVLS_ENABLE=0
 benchmark=scannet_4frames # choices: [scan2cap, scanrefer, scannet_4frames, scannet_6frames]
 output_path=logs/$(TZ="Asia/Shanghai" date "+%Y%m%d")
-model_path=/mnt/ceph/3d_llm/model/vgllm-3d-vggt-4b/
+model_path=/mnt/ceph/3d_llm/result/20251228-110512/
 
 model_args_str="pretrained=$model_path,use_flash_attention_2=true,max_num_frames=32,max_length=12800"
 if [ "$benchmark" = "scanrefer" ]; then
