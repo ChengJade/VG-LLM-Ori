@@ -35,13 +35,13 @@ SPAR_234K = {
 
 LLAVA_HOUND = {
     "annotation_path": "/mnt/ceph/3d_llm/data/train/llava_hound_255k.json",
-    "data_path": "/mnt/ceph/3d_llm/data/media",
+    "data_path": "/mnt/ceph/3d_llm/v2/data/media",
     "tag": "2d"
 }
 
 LLAVA_HOUND_64K = {
     "annotation_path": "/mnt/ceph/3d_llm/data/train/llava_hound_64k.json",
-    "data_path": "/mnt/ceph/3d_llm/data/media",
+    "data_path": "/mnt/ceph/3d_llm/v2/data/media",
     "tag": "2d"
 }
 
