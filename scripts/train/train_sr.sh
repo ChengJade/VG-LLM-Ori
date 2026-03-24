@@ -14,7 +14,7 @@ NPROC_PER_NODE=$(nvidia-smi --list-gpus | wc -l)  # Automatically detects availa
 MODEL_PATH="/mnt/ceph/3d_llm/model/Qwen2.5-VL-3B-Instruct/"  # [ModelArguments] Pretrained model path
 GEOMETRY_ENCODER_TYPE="vggt"
 GEOMETRY_ENCODER_PATH="/mnt/ceph/3d_llm/model/VGGT-1B"
-OUTPUT_DIR="/mnt/ceph/3d_llm/v2/result/deepstack/training/spatial_reasoning/$(date +%Y%m%d-%H%M%S)"                   # Directory for saving checkpoints
+OUTPUT_DIR="/mnt/ceph/3d_llm/v2/result/naive/training/spatial_reasoning/$(date +%Y%m%d-%H%M%S)"                   # Directory for saving checkpoints
 CACHE_DIR="/mnt/ceph/3d_llm/model/hf_cached"                        # [TrainingArguments] Cache directory for models
 mkdir -p $OUTPUT_DIR
 
