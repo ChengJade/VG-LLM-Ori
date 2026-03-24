@@ -69,7 +69,7 @@ torchrun --nproc_per_node=$NPROC_PER_NODE \
             --dataloader_num_workers 4 \
             --group_by_modality_length true \
             --seed 0 \
-            --report_to "none" \
+            --report_to "wandb" \
             --use_geometry_encoder true \
             --geometry_encoder_type $GEOMETRY_ENCODER_TYPE \
             --geometry_encoder_path $GEOMETRY_ENCODER_PATH \
